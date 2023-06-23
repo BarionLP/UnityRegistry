@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 84
+  controlID: 89
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,7 +318,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -8278
+  m_LastSelectedObjectID: 25294
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -537,7 +537,7 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Ametrin/AutoRegistry
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -547,16 +547,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Ametrin/AutoRegistry
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\kothe\Documents\Unity\AutoRegistry
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 06690000
-    m_LastClickedID: 26886
-    m_ExpandedIDs: 000000000c6600000269000000ca9a3bffffff7f
+    m_SelectedIDs: 08630000
+    m_LastClickedID: 25352
+    m_ExpandedIDs: 00000000086300001663000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -584,7 +584,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 0000000008630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -728,9 +728,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0a690000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e6faffff
+      m_ExpandedIDs: 62faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1204,6 +1204,19 @@ MonoBehaviour:
       layout: 4
       size: {x: 236, y: 152}
       sizeOverridden: 1
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: UnityEditor.SceneViewCameraOverlay
+      index: 11
+      layout: 4
+      size: {x: 40, y: 40}
+      sizeOverridden: 0
     m_ContainerData:
     - containerId: overlay-toolbar__top
       scrollOffset: 0
@@ -1376,9 +1389,9 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
