@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Ametrin\AutoRegistry\ScriptableObjectRegistry.cs" />
+     <Compile Include="Assets\Test\Item.cs" />
+     <Compile Include="Assets\Test\RegistryTester.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2023.1.1f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
