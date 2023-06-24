@@ -3,39 +3,23 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.Linq;
-using AmetrinStudios.Utils;
+using Ametrin.Utils;
 
-namespace Ametrin.AutoRegistry
-{
-    public sealed class ScriptableObjectRegistry<TKey, T> where T : ScriptableObject
-    {
-        private readonly Func<T, TKey> KeyProvider;
-        private readonly Dictionary<TKey, T> Entries = new();
-        public int Count => Entries.Count;
+namespace Ametrin.AutoRegistry{
+    public sealed class ScriptableObjectRegistry<TKey, TValue> : IAutoRegistry<TKey, TValue> where TValue : ScriptableObject{
+        private readonly MutableScriptableObjectRegistry<TKey, TValue> Registry;
+        public int Count => Registry.Count;
 
-        public ScriptableObjectRegistry(Func<T, TKey> keyProvider, bool autoInit = false)
-        {
-            KeyProvider = keyProvider;
+        public IReadOnlyCollection<TKey> Keys => Registry.Keys;
 
-            if (autoInit) Init();
+        public TValue this[TKey key] => Registry[key];
+
+        public ScriptableObjectRegistry(Func<TValue, TKey> keyProvider, bool autoInit = false){
+            Registry = new(keyProvider, autoInit);
         }
 
-        public Result<T> TryGet(TKey key)
-        {
-            if (Entries.TryGetValue(key, out var value))
-            {
-                return value;
-            }
-            return ResultStatus.ValueDoesNotExist;
-        }
+        public Result<TValue> TryGet(TKey key) => Registry.TryGet(key);
 
-        public void Init()
-        {
-            var values = AssetDatabase.FindAssets($"t: {typeof(T).Name}").Select(AssetDatabase.GUIDToAssetPath).Select((path) => AssetDatabase.LoadAssetAtPath<T>(path));
-            foreach (var item in values)
-            {
-                Entries.Add(KeyProvider(item), item);
-            }
-        }
+        public void Init()=> Registry.Init();
     }
 }
