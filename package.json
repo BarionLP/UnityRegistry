@@ -5,7 +5,7 @@
     "unity": "2022.2",
     "description": "Automated Registry for Unity",
     "dependencies": {
-        "com.ametrin.utils": "https://github.com/BarionLP/UnityUtils.git"
+        "https://github.com/BarionLP/UnityAutoRegistry.git": "0.1.0"
     },
     "license": "MIT",
     "author": {
