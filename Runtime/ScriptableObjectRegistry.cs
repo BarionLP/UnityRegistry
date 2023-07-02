@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using System.Linq;
 using Ametrin.Utils;
 
-namespace Ametrin.AutoRegistry{
+namespace Ametrin.AutoRegistry
+{
     public sealed class ScriptableObjectRegistry<TKey, TValue> : IAutoRegistry<TKey, TValue> where TValue : ScriptableObject{
         private readonly MutableScriptableObjectRegistry<TKey, TValue> Registry;
         public int Count => Registry.Count;
