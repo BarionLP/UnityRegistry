@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Ametrin.Utils;
-using UnityEditor;
 using UnityEngine;
 
-namespace Ametrin.AutoRegistry{
+namespace Ametrin.AutoRegistry
+{
     public sealed class MutableScriptableObjectRegistry<TKey, TValue> : IMutableAutoRegistry<TKey, TValue> where TValue : ScriptableObject{
         private readonly Func<TValue, TKey> KeyProvider;
         private readonly Dictionary<TKey, TValue> Entries = new();
@@ -26,7 +25,7 @@ namespace Ametrin.AutoRegistry{
         }
 
         public void Init(){
-            var values = AssetDatabase.FindAssets($"t: {typeof(TValue).Name}").Select(AssetDatabase.GUIDToAssetPath).Select((path) => AssetDatabase.LoadAssetAtPath<TValue>(path));
+            var values = Resources.FindObjectsOfTypeAll<TValue>();
             foreach(var item in values){
                 Entries.Add(KeyProvider(item), item);
             }
