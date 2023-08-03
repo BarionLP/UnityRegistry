@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using Ametrin.AutoRegistry;
+using Ametrin.Registry;
 using UnityEngine;
 
 public class RegistryTester : MonoBehaviour{
-    private readonly ScriptableObjectRegistry<string, Item> ItemRegistry = new(item => item.name, false);
+    [SerializeField] private Item[] items;
+    private AssetRegistry<Item> ItemRegistry;
 
     private void Awake(){
-        ItemRegistry.Init();
+        ItemRegistry = new(items);
+        items = null; //releasing the memory
         print(ItemRegistry.Count);
     }
 }
