@@ -1,11 +1,11 @@
 {
     "name": "com.ametrin.registry",
     "displayName": "Ametrin Registry",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "unity": "2022.3",
     "description": "Registry for Unity",
     "dependencies": {
-        "com.ametrin.utils": "0.1.7"
+        "com.ametrin.utils": "0.1.11"
     },
     "license": "MIT",
     "author": {

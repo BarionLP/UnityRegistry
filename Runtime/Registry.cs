@@ -19,7 +19,7 @@ namespace Ametrin.Registry{
             if (Entries.TryGetValue(key, out var value)){
                 return value;
             }
-            return ResultStatus.NotFound;
+            return ResultStatus.Null;
         }
     }
 }
