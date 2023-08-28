@@ -1,16 +1,24 @@
+using System.Collections;
 using System.Collections.Generic;
 using Ametrin.Utils;
 
 namespace Ametrin.Registry{
-    public class MutableRegistry<TKey, TValue> : IRegistry<TKey, TValue> where TValue : UnityEngine.Object{
+    public class MutableRegistry<TKey, TValue> : IMutableRegistry<TKey, TValue>{
         private readonly IDictionary<TKey, TValue> Entries;
         public int Count => Entries.Count;
         public IEnumerable<TKey> Keys => Entries.Keys;
-        public TValue this[TKey key] => Entries[key];
+
+        public TValue this[TKey key] {
+            get => Entries[key];
+            set{
+                Entries[key] = value;
+            }
+        }
 
         public MutableRegistry(IDictionary<TKey, TValue> entries){
             Entries = entries;
         }
+        public MutableRegistry() : this(new Dictionary<TKey, TValue>()){}
 
         public Result<TValue> TryGet(TKey key){
             if (Entries.TryGetValue(key, out var value)){
@@ -26,5 +34,8 @@ namespace Ametrin.Registry{
 
             return ResultStatus.AlreadyExists;
         }
+
+        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => Entries.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable)Entries).GetEnumerator();
     }
 }

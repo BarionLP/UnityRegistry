@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Ametrin.Utils;
 
 namespace Ametrin.Registry{
-    public class Registry<TKey, TValue> : IRegistry<TKey, TValue> where TValue : UnityEngine.Object{
+    public class Registry<TKey, TValue> : IRegistry<TKey, TValue>{
         private readonly IReadOnlyDictionary<TKey, TValue> Entries;
         public int Count => Entries.Count;
         public IEnumerable<TKey> Keys => Entries.Keys;

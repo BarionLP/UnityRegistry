@@ -9,7 +9,7 @@ namespace Ametrin.Registry{
         public Result<TValue> TryGet(TKey key);
     }
 
-    public interface IMutableRegistry<TKey, TValue> : IRegistry<TKey, TValue>{
+    public interface IMutableRegistry<TKey, TValue> : IRegistry<TKey, TValue>, IEnumerable<KeyValuePair<TKey, TValue>>{
         public new TValue this[TKey key] { get; set; }
         public Result TryRegister(TKey key, TValue value);
     }
