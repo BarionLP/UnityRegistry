@@ -35,7 +35,7 @@ namespace Ametrin.Registry{
             return ResultStatus.AlreadyExists;
         }
 
-        public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => Entries.GetEnumerator();
+        public IEnumerator<TValue> GetEnumerator() => Entries.Values.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable)Entries).GetEnumerator();
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Ametrin.Utils;
+using System.Collections;
 
 namespace Ametrin.Registry{
     public class Registry<TKey, TValue> : IRegistry<TKey, TValue>{
@@ -21,5 +22,8 @@ namespace Ametrin.Registry{
             }
             return ResultStatus.Null;
         }
+
+        public IEnumerator<TValue> GetEnumerator() => Entries.Values.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
